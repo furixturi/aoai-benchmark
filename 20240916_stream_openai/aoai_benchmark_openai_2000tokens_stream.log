@@ -1,0 +1,222 @@
+2024-09-16 22:59:00,779 - INFO - Starting benchmark: Tokens: 2000 | Requests: 100 | RPM: 20
+2024-09-16 22:59:29,050 - INFO - Request 3 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T13:59:06.780680+00:00 | First Token Time: 2024-09-16T13:59:07.246681+00:00 | Done Time: 2024-09-16T13:59:29.050450+00:00 | Time to First Token: 0.466s | Total Time: 22.270s
+2024-09-16 22:59:31,407 - INFO - Request 2 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T13:59:03.780543+00:00 | First Token Time: 2024-09-16T13:59:04.197798+00:00 | Done Time: 2024-09-16T13:59:31.407520+00:00 | Time to First Token: 0.417s | Total Time: 27.627s
+2024-09-16 22:59:32,915 - INFO - Request 1 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T13:59:00.779748+00:00 | First Token Time: 2024-09-16T13:59:01.157520+00:00 | Done Time: 2024-09-16T13:59:32.915904+00:00 | Time to First Token: 0.378s | Total Time: 32.136s
+2024-09-16 22:59:36,167 - INFO - Request 6 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T13:59:15.781046+00:00 | First Token Time: 2024-09-16T13:59:16.271447+00:00 | Done Time: 2024-09-16T13:59:36.167428+00:00 | Time to First Token: 0.490s | Total Time: 20.386s
+2024-09-16 22:59:37,911 - INFO - Request 4 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T13:59:09.781083+00:00 | First Token Time: 2024-09-16T13:59:10.237262+00:00 | Done Time: 2024-09-16T13:59:37.911059+00:00 | Time to First Token: 0.456s | Total Time: 28.130s
+2024-09-16 22:59:38,864 - INFO - Request 5 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T13:59:12.780500+00:00 | First Token Time: 2024-09-16T13:59:16.121928+00:00 | Done Time: 2024-09-16T13:59:38.864865+00:00 | Time to First Token: 3.341s | Total Time: 26.084s
+2024-09-16 22:59:41,452 - INFO - Request 7 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T13:59:18.780525+00:00 | First Token Time: 2024-09-16T13:59:19.139979+00:00 | Done Time: 2024-09-16T13:59:41.452168+00:00 | Time to First Token: 0.359s | Total Time: 22.672s
+2024-09-16 22:59:43,831 - INFO - Request 8 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T13:59:21.780249+00:00 | First Token Time: 2024-09-16T13:59:22.159444+00:00 | Done Time: 2024-09-16T13:59:43.831742+00:00 | Time to First Token: 0.379s | Total Time: 22.051s
+2024-09-16 22:59:47,633 - INFO - Request 10 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T13:59:27.780072+00:00 | First Token Time: 2024-09-16T13:59:28.235123+00:00 | Done Time: 2024-09-16T13:59:47.633345+00:00 | Time to First Token: 0.455s | Total Time: 19.853s
+2024-09-16 22:59:53,892 - INFO - Request 9 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T13:59:24.780592+00:00 | First Token Time: 2024-09-16T13:59:25.230020+00:00 | Done Time: 2024-09-16T13:59:53.892574+00:00 | Time to First Token: 0.449s | Total Time: 29.112s
+2024-09-16 22:59:54,311 - INFO - Request 12 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T13:59:33.780994+00:00 | First Token Time: 2024-09-16T13:59:34.130907+00:00 | Done Time: 2024-09-16T13:59:54.311814+00:00 | Time to First Token: 0.350s | Total Time: 20.531s
+2024-09-16 22:59:56,442 - INFO - Request 13 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T13:59:36.780310+00:00 | First Token Time: 2024-09-16T13:59:37.167769+00:00 | Done Time: 2024-09-16T13:59:56.441990+00:00 | Time to First Token: 0.387s | Total Time: 19.662s
+2024-09-16 22:59:57,707 - INFO - Request 11 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T13:59:30.780559+00:00 | First Token Time: 2024-09-16T13:59:31.696355+00:00 | Done Time: 2024-09-16T13:59:57.707526+00:00 | Time to First Token: 0.916s | Total Time: 26.927s
+2024-09-16 23:00:01,739 - INFO - Request 14 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T13:59:39.780659+00:00 | First Token Time: 2024-09-16T13:59:40.130005+00:00 | Done Time: 2024-09-16T14:00:01.739786+00:00 | Time to First Token: 0.349s | Total Time: 21.959s
+2024-09-16 23:00:14,706 - INFO - Request 17 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T13:59:48.780856+00:00 | First Token Time: 2024-09-16T13:59:49.325845+00:00 | Done Time: 2024-09-16T14:00:14.706339+00:00 | Time to First Token: 0.545s | Total Time: 25.925s
+2024-09-16 23:00:16,813 - INFO - Request 18 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T13:59:51.780900+00:00 | First Token Time: 2024-09-16T13:59:52.117696+00:00 | Done Time: 2024-09-16T14:00:16.813345+00:00 | Time to First Token: 0.337s | Total Time: 25.032s
+2024-09-16 23:00:16,873 - INFO - Request 16 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T13:59:45.780413+00:00 | First Token Time: 2024-09-16T13:59:46.112908+00:00 | Done Time: 2024-09-16T14:00:16.873604+00:00 | Time to First Token: 0.332s | Total Time: 31.093s
+2024-09-16 23:00:26,877 - INFO - Request 20 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T13:59:57.781647+00:00 | First Token Time: 2024-09-16T13:59:58.182744+00:00 | Done Time: 2024-09-16T14:00:26.876969+00:00 | Time to First Token: 0.401s | Total Time: 29.095s
+2024-09-16 23:00:27,577 - INFO - Request 15 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T13:59:42.780084+00:00 | First Token Time: 2024-09-16T13:59:43.152038+00:00 | Done Time: 2024-09-16T14:00:27.577898+00:00 | Time to First Token: 0.372s | Total Time: 44.798s
+2024-09-16 23:00:29,606 - INFO - Request 19 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T13:59:54.780083+00:00 | First Token Time: 2024-09-16T13:59:55.106702+00:00 | Done Time: 2024-09-16T14:00:29.606071+00:00 | Time to First Token: 0.327s | Total Time: 34.826s
+2024-09-16 23:00:29,948 - INFO - Request 21 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:00:00.780141+00:00 | First Token Time: 2024-09-16T14:00:01.179274+00:00 | Done Time: 2024-09-16T14:00:29.948323+00:00 | Time to First Token: 0.399s | Total Time: 29.168s
+2024-09-16 23:00:31,299 - INFO - Request 23 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:00:06.780737+00:00 | First Token Time: 2024-09-16T14:00:07.343302+00:00 | Done Time: 2024-09-16T14:00:31.299137+00:00 | Time to First Token: 0.563s | Total Time: 24.518s
+2024-09-16 23:00:40,540 - INFO - Request 26 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:00:15.780055+00:00 | First Token Time: 2024-09-16T14:00:16.132967+00:00 | Done Time: 2024-09-16T14:00:40.540369+00:00 | Time to First Token: 0.353s | Total Time: 24.760s
+2024-09-16 23:00:41,281 - INFO - Request 25 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:00:12.780953+00:00 | First Token Time: 2024-09-16T14:00:15.639603+00:00 | Done Time: 2024-09-16T14:00:41.281841+00:00 | Time to First Token: 2.859s | Total Time: 28.501s
+2024-09-16 23:00:43,260 - INFO - Request 24 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:00:09.780056+00:00 | First Token Time: 2024-09-16T14:00:10.341960+00:00 | Done Time: 2024-09-16T14:00:43.260382+00:00 | Time to First Token: 0.562s | Total Time: 33.480s
+2024-09-16 23:00:45,308 - INFO - Request 27 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:00:18.780671+00:00 | First Token Time: 2024-09-16T14:00:19.241206+00:00 | Done Time: 2024-09-16T14:00:45.308730+00:00 | Time to First Token: 0.461s | Total Time: 26.528s
+2024-09-16 23:00:50,461 - INFO - Request 28 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:00:21.779894+00:00 | First Token Time: 2024-09-16T14:00:22.345670+00:00 | Done Time: 2024-09-16T14:00:50.461828+00:00 | Time to First Token: 0.566s | Total Time: 28.682s
+2024-09-16 23:00:50,522 - INFO - Request 30 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:00:27.779982+00:00 | First Token Time: 2024-09-16T14:00:28.101611+00:00 | Done Time: 2024-09-16T14:00:50.522903+00:00 | Time to First Token: 0.322s | Total Time: 22.743s
+2024-09-16 23:00:54,557 - INFO - Request 29 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:00:24.780000+00:00 | First Token Time: 2024-09-16T14:00:25.176625+00:00 | Done Time: 2024-09-16T14:00:54.557472+00:00 | Time to First Token: 0.397s | Total Time: 29.777s
+2024-09-16 23:00:57,228 - INFO - Request 22 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:00:03.780146+00:00 | First Token Time: 2024-09-16T14:00:04.237939+00:00 | Done Time: 2024-09-16T14:00:57.228672+00:00 | Time to First Token: 0.458s | Total Time: 53.449s
+2024-09-16 23:01:02,924 - INFO - Request 32 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:00:33.780325+00:00 | First Token Time: 2024-09-16T14:00:34.125084+00:00 | Done Time: 2024-09-16T14:01:02.924598+00:00 | Time to First Token: 0.345s | Total Time: 29.144s
+2024-09-16 23:01:03,617 - INFO - Request 33 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:00:36.780820+00:00 | First Token Time: 2024-09-16T14:00:37.202508+00:00 | Done Time: 2024-09-16T14:01:03.617911+00:00 | Time to First Token: 0.422s | Total Time: 26.837s
+2024-09-16 23:01:08,404 - INFO - Request 31 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:00:30.779919+00:00 | First Token Time: 2024-09-16T14:00:31.229503+00:00 | Done Time: 2024-09-16T14:01:08.404481+00:00 | Time to First Token: 0.450s | Total Time: 37.625s
+2024-09-16 23:01:10,376 - INFO - Request 35 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:00:42.780748+00:00 | First Token Time: 2024-09-16T14:00:43.241885+00:00 | Done Time: 2024-09-16T14:01:10.376596+00:00 | Time to First Token: 0.461s | Total Time: 27.596s
+2024-09-16 23:01:11,115 - INFO - Request 34 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:00:39.780481+00:00 | First Token Time: 2024-09-16T14:00:40.206200+00:00 | Done Time: 2024-09-16T14:01:11.115468+00:00 | Time to First Token: 0.426s | Total Time: 31.335s
+2024-09-16 23:01:19,269 - INFO - Request 37 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:00:48.780337+00:00 | First Token Time: 2024-09-16T14:00:49.228103+00:00 | Done Time: 2024-09-16T14:01:19.269586+00:00 | Time to First Token: 0.448s | Total Time: 30.489s
+2024-09-16 23:01:20,888 - INFO - Request 39 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:00:54.780486+00:00 | First Token Time: 2024-09-16T14:00:55.147897+00:00 | Done Time: 2024-09-16T14:01:20.888872+00:00 | Time to First Token: 0.367s | Total Time: 26.108s
+2024-09-16 23:01:21,464 - INFO - Request 36 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:00:45.780935+00:00 | First Token Time: 2024-09-16T14:00:46.253805+00:00 | Done Time: 2024-09-16T14:01:21.464562+00:00 | Time to First Token: 0.473s | Total Time: 35.684s
+2024-09-16 23:01:21,956 - ERROR - Request 48 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 429 | Request Time: 2024-09-16T14:01:21.780166+00:00 | Error Time: 2024-09-16T14:01:21.956679+00:00 | Error: {
+    "error": {
+        "message": "Rate limit reached for gpt-4o in organization org-Mkcs6cWonW0g4uucv8nt5HnS on tokens per min (TPM): Limit 30000, Used 27914, Requested 2123. Please try again in 74ms. Visit https://platform.openai.com/account/rate-limits to learn more.",
+        "type": "tokens",
+        "param": null,
+        "code": "rate_limit_exceeded"
+    }
+}
+
+2024-09-16 23:01:23,679 - INFO - Request 41 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:01:00.780121+00:00 | First Token Time: 2024-09-16T14:01:01.288070+00:00 | Done Time: 2024-09-16T14:01:23.679787+00:00 | Time to First Token: 0.508s | Total Time: 22.900s
+2024-09-16 23:01:24,582 - INFO - Request 38 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:00:51.781424+00:00 | First Token Time: 2024-09-16T14:00:52.731581+00:00 | Done Time: 2024-09-16T14:01:24.581987+00:00 | Time to First Token: 0.950s | Total Time: 32.801s
+2024-09-16 23:01:26,372 - INFO - Request 40 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:00:57.781022+00:00 | First Token Time: 2024-09-16T14:00:58.214721+00:00 | Done Time: 2024-09-16T14:01:26.372917+00:00 | Time to First Token: 0.434s | Total Time: 28.592s
+2024-09-16 23:01:29,284 - INFO - Request 43 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:01:06.780815+00:00 | First Token Time: 2024-09-16T14:01:07.120042+00:00 | Done Time: 2024-09-16T14:01:29.284264+00:00 | Time to First Token: 0.339s | Total Time: 22.503s
+2024-09-16 23:01:33,724 - INFO - Request 44 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:01:09.780572+00:00 | First Token Time: 2024-09-16T14:01:10.229280+00:00 | Done Time: 2024-09-16T14:01:33.724420+00:00 | Time to First Token: 0.449s | Total Time: 23.944s
+2024-09-16 23:01:33,975 - ERROR - Request 52 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 429 | Request Time: 2024-09-16T14:01:33.780585+00:00 | Error Time: 2024-09-16T14:01:33.975396+00:00 | Error: {
+    "error": {
+        "message": "Rate limit reached for gpt-4o in organization org-Mkcs6cWonW0g4uucv8nt5HnS on tokens per min (TPM): Limit 30000, Used 28201, Requested 2123. Please try again in 648ms. Visit https://platform.openai.com/account/rate-limits to learn more.",
+        "type": "tokens",
+        "param": null,
+        "code": "rate_limit_exceeded"
+    }
+}
+
+2024-09-16 23:01:37,014 - INFO - Request 42 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:01:03.780957+00:00 | First Token Time: 2024-09-16T14:01:04.119656+00:00 | Done Time: 2024-09-16T14:01:37.014033+00:00 | Time to First Token: 0.339s | Total Time: 33.233s
+2024-09-16 23:01:37,583 - INFO - Request 47 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:01:18.780789+00:00 | First Token Time: 2024-09-16T14:01:19.223596+00:00 | Done Time: 2024-09-16T14:01:37.583374+00:00 | Time to First Token: 0.443s | Total Time: 18.803s
+2024-09-16 23:01:38,235 - INFO - Request 45 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:01:12.780202+00:00 | First Token Time: 2024-09-16T14:01:13.167030+00:00 | Done Time: 2024-09-16T14:01:38.235071+00:00 | Time to First Token: 0.387s | Total Time: 25.455s
+2024-09-16 23:01:41,985 - INFO - Request 46 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:01:15.780225+00:00 | First Token Time: 2024-09-16T14:01:16.120603+00:00 | Done Time: 2024-09-16T14:01:41.985863+00:00 | Time to First Token: 0.340s | Total Time: 26.206s
+2024-09-16 23:01:42,953 - ERROR - Request 55 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 429 | Request Time: 2024-09-16T14:01:42.780651+00:00 | Error Time: 2024-09-16T14:01:42.953711+00:00 | Error: {
+    "error": {
+        "message": "Rate limit reached for gpt-4o in organization org-Mkcs6cWonW0g4uucv8nt5HnS on tokens per min (TPM): Limit 30000, Used 27884, Requested 2123. Please try again in 14ms. Visit https://platform.openai.com/account/rate-limits to learn more.",
+        "type": "tokens",
+        "param": null,
+        "code": "rate_limit_exceeded"
+    }
+}
+
+2024-09-16 23:01:54,997 - ERROR - Request 59 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 429 | Request Time: 2024-09-16T14:01:54.780067+00:00 | Error Time: 2024-09-16T14:01:54.997180+00:00 | Error: {
+    "error": {
+        "message": "Rate limit reached for gpt-4o in organization org-Mkcs6cWonW0g4uucv8nt5HnS on tokens per min (TPM): Limit 30000, Used 28226, Requested 2123. Please try again in 698ms. Visit https://platform.openai.com/account/rate-limits to learn more.",
+        "type": "tokens",
+        "param": null,
+        "code": "rate_limit_exceeded"
+    }
+}
+
+2024-09-16 23:01:56,820 - INFO - Request 50 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:01:27.780868+00:00 | First Token Time: 2024-09-16T14:01:28.632021+00:00 | Done Time: 2024-09-16T14:01:56.820359+00:00 | Time to First Token: 0.851s | Total Time: 29.039s
+2024-09-16 23:01:58,778 - INFO - Request 49 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:01:24.781520+00:00 | First Token Time: 2024-09-16T14:01:25.230360+00:00 | Done Time: 2024-09-16T14:01:58.778915+00:00 | Time to First Token: 0.449s | Total Time: 33.997s
+2024-09-16 23:02:00,628 - INFO - Request 53 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:01:36.780630+00:00 | First Token Time: 2024-09-16T14:01:37.104177+00:00 | Done Time: 2024-09-16T14:02:00.628809+00:00 | Time to First Token: 0.324s | Total Time: 23.848s
+2024-09-16 23:02:02,440 - INFO - Request 54 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:01:39.780414+00:00 | First Token Time: 2024-09-16T14:01:40.211395+00:00 | Done Time: 2024-09-16T14:02:02.440550+00:00 | Time to First Token: 0.431s | Total Time: 22.660s
+2024-09-16 23:02:03,959 - ERROR - Request 62 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 429 | Request Time: 2024-09-16T14:02:03.780940+00:00 | Error Time: 2024-09-16T14:02:03.959432+00:00 | Error: {
+    "error": {
+        "message": "Rate limit reached for gpt-4o in organization org-Mkcs6cWonW0g4uucv8nt5HnS on tokens per min (TPM): Limit 30000, Used 27921, Requested 2123. Please try again in 88ms. Visit https://platform.openai.com/account/rate-limits to learn more.",
+        "type": "tokens",
+        "param": null,
+        "code": "rate_limit_exceeded"
+    }
+}
+
+2024-09-16 23:02:04,015 - INFO - Request 51 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:01:30.780195+00:00 | First Token Time: 2024-09-16T14:01:31.271036+00:00 | Done Time: 2024-09-16T14:02:04.015440+00:00 | Time to First Token: 0.491s | Total Time: 33.235s
+2024-09-16 23:02:06,831 - INFO - Request 57 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:01:48.779851+00:00 | First Token Time: 2024-09-16T14:01:49.162898+00:00 | Done Time: 2024-09-16T14:02:06.830913+00:00 | Time to First Token: 0.383s | Total Time: 18.051s
+2024-09-16 23:02:07,840 - INFO - Request 56 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:01:45.781143+00:00 | First Token Time: 2024-09-16T14:01:46.186780+00:00 | Done Time: 2024-09-16T14:02:07.840317+00:00 | Time to First Token: 0.406s | Total Time: 22.059s
+2024-09-16 23:02:15,817 - INFO - Request 58 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:01:51.780830+00:00 | First Token Time: 2024-09-16T14:01:52.173728+00:00 | Done Time: 2024-09-16T14:02:15.817545+00:00 | Time to First Token: 0.393s | Total Time: 24.037s
+2024-09-16 23:02:15,999 - ERROR - Request 66 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 429 | Request Time: 2024-09-16T14:02:15.780389+00:00 | Error Time: 2024-09-16T14:02:15.999869+00:00 | Error: {
+    "error": {
+        "message": "Rate limit reached for gpt-4o in organization org-Mkcs6cWonW0g4uucv8nt5HnS on tokens per min (TPM): Limit 30000, Used 28208, Requested 2123. Please try again in 662ms. Visit https://platform.openai.com/account/rate-limits to learn more.",
+        "type": "tokens",
+        "param": null,
+        "code": "rate_limit_exceeded"
+    }
+}
+
+2024-09-16 23:02:25,016 - ERROR - Request 69 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 429 | Request Time: 2024-09-16T14:02:24.781722+00:00 | Error Time: 2024-09-16T14:02:25.016392+00:00 | Error: {
+    "error": {
+        "message": "Rate limit reached for gpt-4o in organization org-Mkcs6cWonW0g4uucv8nt5HnS on tokens per min (TPM): Limit 30000, Used 27915, Requested 2123. Please try again in 76ms. Visit https://platform.openai.com/account/rate-limits to learn more.",
+        "type": "tokens",
+        "param": null,
+        "code": "rate_limit_exceeded"
+    }
+}
+
+2024-09-16 23:02:25,332 - INFO - Request 60 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:01:57.780447+00:00 | First Token Time: 2024-09-16T14:01:58.271997+00:00 | Done Time: 2024-09-16T14:02:25.332884+00:00 | Time to First Token: 0.492s | Total Time: 27.552s
+2024-09-16 23:02:28,921 - INFO - Request 64 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:02:09.780518+00:00 | First Token Time: 2024-09-16T14:02:10.206142+00:00 | Done Time: 2024-09-16T14:02:28.921792+00:00 | Time to First Token: 0.426s | Total Time: 19.141s
+2024-09-16 23:02:29,502 - INFO - Request 61 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:02:00.780068+00:00 | First Token Time: 2024-09-16T14:02:01.148327+00:00 | Done Time: 2024-09-16T14:02:29.502907+00:00 | Time to First Token: 0.368s | Total Time: 28.723s
+2024-09-16 23:02:35,525 - INFO - Request 63 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:02:06.780507+00:00 | First Token Time: 2024-09-16T14:02:07.463386+00:00 | Done Time: 2024-09-16T14:02:35.525837+00:00 | Time to First Token: 0.683s | Total Time: 28.745s
+2024-09-16 23:02:39,128 - INFO - Request 65 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:02:12.780315+00:00 | First Token Time: 2024-09-16T14:02:13.236892+00:00 | Done Time: 2024-09-16T14:02:39.128896+00:00 | Time to First Token: 0.457s | Total Time: 26.349s
+2024-09-16 23:02:40,057 - ERROR - Request 74 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 429 | Request Time: 2024-09-16T14:02:39.780774+00:00 | Error Time: 2024-09-16T14:02:40.057680+00:00 | Error: {
+    "error": {
+        "message": "Rate limit reached for gpt-4o in organization org-Mkcs6cWonW0g4uucv8nt5HnS on tokens per min (TPM): Limit 30000, Used 28317, Requested 2123. Please try again in 880ms. Visit https://platform.openai.com/account/rate-limits to learn more.",
+        "type": "tokens",
+        "param": null,
+        "code": "rate_limit_exceeded"
+    }
+}
+
+2024-09-16 23:02:42,305 - INFO - Request 68 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:02:21.780516+00:00 | First Token Time: 2024-09-16T14:02:22.259506+00:00 | Done Time: 2024-09-16T14:02:42.305040+00:00 | Time to First Token: 0.479s | Total Time: 20.525s
+2024-09-16 23:02:48,991 - ERROR - Request 77 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 429 | Request Time: 2024-09-16T14:02:48.779766+00:00 | Error Time: 2024-09-16T14:02:48.991195+00:00 | Error: {
+    "error": {
+        "message": "Rate limit reached for gpt-4o in organization org-Mkcs6cWonW0g4uucv8nt5HnS on tokens per min (TPM): Limit 30000, Used 28032, Requested 2123. Please try again in 310ms. Visit https://platform.openai.com/account/rate-limits to learn more.",
+        "type": "tokens",
+        "param": null,
+        "code": "rate_limit_exceeded"
+    }
+}
+
+2024-09-16 23:02:49,135 - INFO - Request 67 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:02:18.780827+00:00 | First Token Time: 2024-09-16T14:02:19.273260+00:00 | Done Time: 2024-09-16T14:02:49.135106+00:00 | Time to First Token: 0.492s | Total Time: 30.354s
+2024-09-16 23:02:57,127 - INFO - Request 70 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:02:27.780215+00:00 | First Token Time: 2024-09-16T14:02:28.383826+00:00 | Done Time: 2024-09-16T14:02:57.127344+00:00 | Time to First Token: 0.604s | Total Time: 29.347s
+2024-09-16 23:03:00,973 - ERROR - Request 81 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 429 | Request Time: 2024-09-16T14:03:00.780475+00:00 | Error Time: 2024-09-16T14:03:00.972971+00:00 | Error: {
+    "error": {
+        "message": "Rate limit reached for gpt-4o in organization org-Mkcs6cWonW0g4uucv8nt5HnS on tokens per min (TPM): Limit 30000, Used 28367, Requested 2123. Please try again in 979ms. Visit https://platform.openai.com/account/rate-limits to learn more.",
+        "type": "tokens",
+        "param": null,
+        "code": "rate_limit_exceeded"
+    }
+}
+
+2024-09-16 23:03:01,765 - INFO - Request 71 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:02:30.779945+00:00 | First Token Time: 2024-09-16T14:02:31.119235+00:00 | Done Time: 2024-09-16T14:03:01.765001+00:00 | Time to First Token: 0.339s | Total Time: 30.985s
+2024-09-16 23:03:01,944 - INFO - Request 72 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:02:33.780633+00:00 | First Token Time: 2024-09-16T14:02:34.488110+00:00 | Done Time: 2024-09-16T14:03:01.944360+00:00 | Time to First Token: 0.707s | Total Time: 28.164s
+2024-09-16 23:03:06,618 - INFO - Request 73 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:02:36.780358+00:00 | First Token Time: 2024-09-16T14:02:37.245529+00:00 | Done Time: 2024-09-16T14:03:06.618395+00:00 | Time to First Token: 0.465s | Total Time: 29.838s
+2024-09-16 23:03:09,970 - ERROR - Request 84 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 429 | Request Time: 2024-09-16T14:03:09.780755+00:00 | Error Time: 2024-09-16T14:03:09.970175+00:00 | Error: {
+    "error": {
+        "message": "Rate limit reached for gpt-4o in organization org-Mkcs6cWonW0g4uucv8nt5HnS on tokens per min (TPM): Limit 30000, Used 28060, Requested 2123. Please try again in 366ms. Visit https://platform.openai.com/account/rate-limits to learn more.",
+        "type": "tokens",
+        "param": null,
+        "code": "rate_limit_exceeded"
+    }
+}
+
+2024-09-16 23:03:13,788 - INFO - Request 76 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:02:45.780240+00:00 | First Token Time: 2024-09-16T14:02:46.208996+00:00 | Done Time: 2024-09-16T14:03:13.788471+00:00 | Time to First Token: 0.429s | Total Time: 28.008s
+2024-09-16 23:03:16,593 - INFO - Request 75 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:02:42.780385+00:00 | First Token Time: 2024-09-16T14:02:43.180399+00:00 | Done Time: 2024-09-16T14:03:16.593852+00:00 | Time to First Token: 0.400s | Total Time: 33.813s
+2024-09-16 23:03:19,593 - INFO - Request 79 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:02:54.780606+00:00 | First Token Time: 2024-09-16T14:02:55.196627+00:00 | Done Time: 2024-09-16T14:03:19.593351+00:00 | Time to First Token: 0.416s | Total Time: 24.813s
+2024-09-16 23:03:20,420 - INFO - Request 78 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:02:51.780312+00:00 | First Token Time: 2024-09-16T14:02:52.288621+00:00 | Done Time: 2024-09-16T14:03:20.420005+00:00 | Time to First Token: 0.508s | Total Time: 28.640s
+2024-09-16 23:03:22,061 - ERROR - Request 88 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 429 | Request Time: 2024-09-16T14:03:21.780424+00:00 | Error Time: 2024-09-16T14:03:22.060952+00:00 | Error: {
+    "error": {
+        "message": "Rate limit reached for gpt-4o in organization org-Mkcs6cWonW0g4uucv8nt5HnS on tokens per min (TPM): Limit 30000, Used 28143, Requested 2123. Please try again in 532ms. Visit https://platform.openai.com/account/rate-limits to learn more.",
+        "type": "tokens",
+        "param": null,
+        "code": "rate_limit_exceeded"
+    }
+}
+
+2024-09-16 23:03:29,171 - INFO - Request 82 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:03:03.781135+00:00 | First Token Time: 2024-09-16T14:03:04.180861+00:00 | Done Time: 2024-09-16T14:03:29.171168+00:00 | Time to First Token: 0.400s | Total Time: 25.390s
+2024-09-16 23:03:29,885 - INFO - Request 83 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:03:06.780305+00:00 | First Token Time: 2024-09-16T14:03:07.144175+00:00 | Done Time: 2024-09-16T14:03:29.885261+00:00 | Time to First Token: 0.364s | Total Time: 23.105s
+2024-09-16 23:03:30,404 - INFO - Request 85 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:03:12.780167+00:00 | First Token Time: 2024-09-16T14:03:13.541506+00:00 | Done Time: 2024-09-16T14:03:30.404066+00:00 | Time to First Token: 0.761s | Total Time: 17.624s
+2024-09-16 23:03:33,128 - INFO - Request 80 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:02:57.779891+00:00 | First Token Time: 2024-09-16T14:02:58.539402+00:00 | Done Time: 2024-09-16T14:03:33.128033+00:00 | Time to First Token: 0.760s | Total Time: 35.348s
+2024-09-16 23:03:33,957 - ERROR - Request 92 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 429 | Request Time: 2024-09-16T14:03:33.780816+00:00 | Error Time: 2024-09-16T14:03:33.957681+00:00 | Error: {
+    "error": {
+        "message": "Rate limit reached for gpt-4o in organization org-Mkcs6cWonW0g4uucv8nt5HnS on tokens per min (TPM): Limit 30000, Used 28461, Requested 2123. Please try again in 1.168s. Visit https://platform.openai.com/account/rate-limits to learn more.",
+        "type": "tokens",
+        "param": null,
+        "code": "rate_limit_exceeded"
+    }
+}
+
+2024-09-16 23:03:37,085 - INFO - Request 87 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:03:18.779753+00:00 | First Token Time: 2024-09-16T14:03:19.284352+00:00 | Done Time: 2024-09-16T14:03:37.085029+00:00 | Time to First Token: 0.505s | Total Time: 18.305s
+2024-09-16 23:03:39,789 - INFO - Request 86 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:03:15.780732+00:00 | First Token Time: 2024-09-16T14:03:16.174123+00:00 | Done Time: 2024-09-16T14:03:39.789035+00:00 | Time to First Token: 0.393s | Total Time: 24.008s
+2024-09-16 23:03:42,959 - ERROR - Request 95 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 429 | Request Time: 2024-09-16T14:03:42.780159+00:00 | Error Time: 2024-09-16T14:03:42.959406+00:00 | Error: {
+    "error": {
+        "message": "Rate limit reached for gpt-4o in organization org-Mkcs6cWonW0g4uucv8nt5HnS on tokens per min (TPM): Limit 30000, Used 28173, Requested 2123. Please try again in 592ms. Visit https://platform.openai.com/account/rate-limits to learn more.",
+        "type": "tokens",
+        "param": null,
+        "code": "rate_limit_exceeded"
+    }
+}
+
+2024-09-16 23:03:51,966 - ERROR - Request 98 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 429 | Request Time: 2024-09-16T14:03:51.780870+00:00 | Error Time: 2024-09-16T14:03:51.966453+00:00 | Error: {
+    "error": {
+        "message": "Rate limit reached for gpt-4o in organization org-Mkcs6cWonW0g4uucv8nt5HnS on tokens per min (TPM): Limit 30000, Used 27911, Requested 2123. Please try again in 68ms. Visit https://platform.openai.com/account/rate-limits to learn more.",
+        "type": "tokens",
+        "param": null,
+        "code": "rate_limit_exceeded"
+    }
+}
+
+2024-09-16 23:03:52,205 - INFO - Request 90 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:03:27.780662+00:00 | First Token Time: 2024-09-16T14:03:28.325932+00:00 | Done Time: 2024-09-16T14:03:52.205516+00:00 | Time to First Token: 0.545s | Total Time: 24.425s
+2024-09-16 23:03:54,062 - INFO - Request 89 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:03:24.779975+00:00 | First Token Time: 2024-09-16T14:03:25.420242+00:00 | Done Time: 2024-09-16T14:03:54.061988+00:00 | Time to First Token: 0.640s | Total Time: 29.282s
+2024-09-16 23:03:58,133 - INFO - Request 91 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:03:30.781012+00:00 | First Token Time: 2024-09-16T14:03:31.167572+00:00 | Done Time: 2024-09-16T14:03:58.133647+00:00 | Time to First Token: 0.387s | Total Time: 27.353s
+2024-09-16 23:04:05,131 - INFO - Request 93 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:03:36.780618+00:00 | First Token Time: 2024-09-16T14:03:37.493645+00:00 | Done Time: 2024-09-16T14:04:05.131445+00:00 | Time to First Token: 0.713s | Total Time: 28.351s
+2024-09-16 23:04:08,151 - INFO - Request 94 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:03:39.780174+00:00 | First Token Time: 2024-09-16T14:03:40.189637+00:00 | Done Time: 2024-09-16T14:04:08.151126+00:00 | Time to First Token: 0.409s | Total Time: 28.371s
+2024-09-16 23:04:12,034 - INFO - Request 96 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:03:45.780394+00:00 | First Token Time: 2024-09-16T14:03:46.178658+00:00 | Done Time: 2024-09-16T14:04:12.034617+00:00 | Time to First Token: 0.398s | Total Time: 26.254s
+2024-09-16 23:04:15,266 - INFO - Request 99 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:03:54.780997+00:00 | First Token Time: 2024-09-16T14:03:55.222930+00:00 | Done Time: 2024-09-16T14:04:15.266292+00:00 | Time to First Token: 0.442s | Total Time: 20.485s
+2024-09-16 23:04:16,994 - INFO - Request 100 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:03:57.780489+00:00 | First Token Time: 2024-09-16T14:03:58.203520+00:00 | Done Time: 2024-09-16T14:04:16.994328+00:00 | Time to First Token: 0.423s | Total Time: 19.214s
+2024-09-16 23:04:19,560 - INFO - Request 97 | Endpoint: https://api.openai.com/v1/chat/completions?tokens=2000 | Status: 200 | Request Time: 2024-09-16T14:03:48.780697+00:00 | First Token Time: 2024-09-16T14:03:49.256862+00:00 | Done Time: 2024-09-16T14:04:19.560071+00:00 | Time to First Token: 0.476s | Total Time: 30.779s
+2024-09-16 23:04:19,560 - INFO - Successful requests made: 85 | Average Time to First Token: 0.525s | Average Total Time: 27.191s | RPM: 20

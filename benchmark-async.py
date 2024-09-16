@@ -8,21 +8,19 @@ import time
 import json
 from datetime import datetime, timezone
 
-# Configure logging
-logging.basicConfig(
-    filename=f"aoai_benchmark_openai.log",
-    filemode='w',  # Overwrite the log file each time the script runs
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
-
-
 # Load environment variables from .env file
 load_dotenv()
-API_ENDPOINT_ENV = os.environ["GPT_4o_SWC_20240913_ENDPOINT"]
-DEPLOYMENT = os.environ["GPT_4o_SWC_20240913_PTU_DEPLOYMENT"]
-# DEPLOYMENT = os.environ["GPT_4o_SWC_20240913_GLOBAL_PAYGO_DEPLOYMENT"]
-API_KEY = os.environ["GPT_4o_SWC_20240913_KEY"]
+
+# test with GBB cluster
+# API_ENDPOINT_ENV = os.environ["GPT_4o_SWC_20240913_ENDPOINT"]
+# DEPLOYMENT = os.environ["GPT_4o_SWC_20240913_PTU_DEPLOYMENT"]
+# # DEPLOYMENT = os.environ["GPT_4o_SWC_20240913_GLOBAL_PAYGO_DEPLOYMENT"]
+# API_KEY = os.environ["GPT_4o_SWC_20240913_KEY"]
+
+# test with my JP east endpoint
+API_ENDPOINT_ENV = os.environ["PAYGO_4o_GLOBAL_JP_ENDPOINT"]
+DEPLOYMENT = os.environ["PAYGO_4o_GLOBAL_JP_DEPLOYMENT"]
+API_KEY = os.environ["PAYGO_4o_GLOBAL_JP_KEY"]
 
 # Parse command-line arguments
 parser = argparse.ArgumentParser(description="AOAI Request Benchmark Script")
@@ -38,6 +36,7 @@ parser.add_argument(
         default='false',
         help='Enable (true) or disable (false) streaming requests'
     )
+
 args = parser.parse_args()
 tokens = args.tokens
 use_stream = args.stream == 'true'
@@ -50,6 +49,20 @@ HEADERS = {
     "Content-Type": "application/json",
     "api-key": API_KEY
 }
+
+prompt = f"Generate {tokens} tokens in Japanese about banks, of which {tokens//4} about Japan bank history, {tokens//4} about different businesses that a bank in Japan runs, {tokens//4}  about operations and processes, {tokens//4}  about new technologies. Don’t stop until the requested token count is reached."
+
+PAYLOAD = {
+        "messages": [
+            {"role": "system", "content": "You are a helpful assistant trained to generate exactly the number of tokens requested. Always generate content with deep detail and explanation to ensure the required token count is reached. Don't output anything else."},
+            {"role": "user", "content": prompt}
+        ],
+        "max_tokens": tokens,
+        "temperature": 0.7,
+        "top_p": 1,
+        "frequency_penalty": 0,
+        "presence_penalty": 0
+    }
 
 # OpenAI API settings
 
@@ -64,24 +77,16 @@ if use_openai:
             "Authorization": f"Bearer {OPENAI_API_KEY}"
         }
 
+# Configure logging
+logging.basicConfig(
+    filename=f"aoai_benchmark_openai_{tokens}tokens.log" if use_openai else f"aoai_benchmark_{tokens}tokens.log",
+    filemode='w',  # Overwrite the log file each time the script runs
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
 
 ## Without streaming
-async def make_request(session, i, prompt, tokens):
-    data = {
-        "messages": [
-            {"role": "system", "content": "You are a helpful assistant trained to generate exactly the number of tokens requested. Always generate content with deep detail and explanation to ensure the required token count is reached. Don't output anything else."},
-            {"role": "user", "content": prompt}
-        ],
-        "max_tokens": tokens,
-        "temperature": 0.7,
-        "top_p": 1,
-        "frequency_penalty": 0,
-        "presence_penalty": 0
-    }
-    
-    if use_openai:
-        data["model"] = "gpt-4o"
-    
+async def make_request(session, i, data):
     request_time = datetime.now(timezone.utc)
     request_time_str = request_time.isoformat()
 
@@ -136,7 +141,7 @@ async def make_request(session, i, prompt, tokens):
 
 
 ## With streaming
-async def make_request_stream(session, i, prompt, tokens):
+async def make_request_stream(session, i, data):
     data = {
         "messages": [
             {"role": "system", "content": "You are a helpful assistant trained to generate exactly the number of tokens requested. Always generate content with deep detail and explanation to ensure the required token count is reached. Don't output anything else."},
@@ -180,37 +185,38 @@ async def make_request_stream(session, i, prompt, tokens):
     #                                         first_token_time = datetime.now(timezone.utc)
                                         
                             
-async def schedule_request(session, request_number, prompt, tokens, delay, stream):
+async def schedule_request(session, request_number, data, delay):
     await asyncio.sleep(delay)
-    if stream:
+    if use_stream:
         # if stream is true, use make_request_stream()
         # and the returned the duration will be a tuple of (time_to_first_token, total_time)
-        duration = await make_request_stream(session, request_number, prompt, tokens)
+        duration = await make_request_stream(session, request_number, data)
     else:
-        duration = await make_request(session, request_number, prompt, tokens)
+        duration = await make_request(session, request_number, data)
     return duration
 
-async def scheduler(session, total_requests, prompt, tokens, delay_between_calls, stream):
+async def scheduler(session, total_requests, data, delay_between_calls):
     tasks = []
     for i in range(total_requests):
         request_start_time = i * delay_between_calls
-        task = asyncio.create_task(schedule_request(session, i+1, prompt, tokens, request_start_time, stream))
+        task = asyncio.create_task(schedule_request(session, i+1, data, request_start_time))
         tasks.append(task)
     durations = await asyncio.gather(*tasks) # execute all tasks concurrently
     return durations
 
 async def main():
     delay_between_calls = 60 / args.rpm  # seconds
-
     total_requests = args.requests
-    tokens = args.tokens
-    stream = use_stream
     
-    prompt = f"Generate {tokens} tokens in Japanese about banks, of which {tokens//4} about Japan bank history, {tokens//4} about different businesses that a bank in Japan runs, {tokens//4}  about operations and processes, {tokens//4}  about new technologies. Don’t stop until the requested token count is reached."
+    data = PAYLOAD
+    if use_openai:
+        data["model"] = "gpt-4o"
+    if use_stream:
+        data["stream"] = True
 
     async with aiohttp.ClientSession() as session:
-        durations = await scheduler(session, total_requests, prompt, tokens, delay_between_calls, stream)
-        if stream:
+        durations = await scheduler(session, total_requests, data, delay_between_calls)
+        if use_stream:
             # durations is a lit of tuples: (time_to_first_token, total_time)
             time_to_first_token_list = [d[0] for d in durations if d[0] is not None]
             total_time_list = [d[1] for d in durations if d[1] is not None]

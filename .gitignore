@@ -1,0 +1,4 @@
+.env
+note*
+*.xlsx
+.venv

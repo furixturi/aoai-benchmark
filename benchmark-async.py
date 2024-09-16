@@ -12,15 +12,15 @@ from datetime import datetime, timezone
 load_dotenv()
 
 # test with GBB cluster
-# API_ENDPOINT_ENV = os.environ["GPT_4o_SWC_20240913_ENDPOINT"]
+API_ENDPOINT_ENV = os.environ["GPT_4o_SWC_20240913_ENDPOINT"]
 # DEPLOYMENT = os.environ["GPT_4o_SWC_20240913_PTU_DEPLOYMENT"]
-# # DEPLOYMENT = os.environ["GPT_4o_SWC_20240913_GLOBAL_PAYGO_DEPLOYMENT"]
-# API_KEY = os.environ["GPT_4o_SWC_20240913_KEY"]
+DEPLOYMENT = os.environ["GPT_4o_SWC_20240913_GLOBAL_PAYGO_DEPLOYMENT"]
+API_KEY = os.environ["GPT_4o_SWC_20240913_KEY"]
 
 # test with my JP east endpoint
-API_ENDPOINT_ENV = os.environ["PAYGO_4o_GLOBAL_JP_ENDPOINT"]
-DEPLOYMENT = os.environ["PAYGO_4o_GLOBAL_JP_DEPLOYMENT"]
-API_KEY = os.environ["PAYGO_4o_GLOBAL_JP_KEY"]
+# API_ENDPOINT_ENV = os.environ["PAYGO_4o_GLOBAL_JP_ENDPOINT"]
+# DEPLOYMENT = os.environ["PAYGO_4o_GLOBAL_JP_DEPLOYMENT"]
+# API_KEY = os.environ["PAYGO_4o_GLOBAL_JP_KEY"]
 
 # Parse command-line arguments
 parser = argparse.ArgumentParser(description="AOAI Request Benchmark Script")
@@ -79,7 +79,7 @@ if use_openai:
 
 # Configure logging
 logging.basicConfig(
-    filename=f"aoai_benchmark_openai_{tokens}tokens{"_strean" if use_stream else ""}.log" if use_openai else f"aoai_benchmark_{tokens}tokens{"_stream" if use_stream else ""}.log",
+    filename=f"aoai_benchmark_openai_{tokens}tokens{"_stream" if use_stream else ""}.log" if use_openai else f"aoai_benchmark_{tokens}tokens{"_stream" if use_stream else ""}.log",
     filemode='w',  # Overwrite the log file each time the script runs
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
@@ -264,8 +264,8 @@ async def main():
             avg_total_time = sum(total_time_list) / len(total_time_list) if total_time_list else None
             avg_total_time_str = f"{avg_total_time:.3f}s" if avg_total_time else "N/A"
             
-            print(f"Successful requests made: {len(total_time_list)} | Average Time to First Token: {avg_time_to_first_token_str}s | Average Total Time: {avg_total_time_str}s | RPM: {args.rpm}")
-            logging.info(f"Successful requests made: {len(total_time_list)} | Average Time to First Token: {avg_time_to_first_token_str}s | Average Total Time: {avg_total_time_str}s | RPM: {args.rpm}")
+            print(f"Successful requests made: {len(total_time_list)} | Average Time to First Token: {avg_time_to_first_token_str} | Average Total Time: {avg_total_time_str} | RPM: {args.rpm}")
+            logging.info(f"Successful requests made: {len(total_time_list)} | Average Time to First Token: {avg_time_to_first_token_str} | Average Total Time: {avg_total_time_str} | RPM: {args.rpm}")
         else:
             # durations is a list of durations for each request
             success_durations = [d for d in durations if d is not None]

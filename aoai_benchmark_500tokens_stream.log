@@ -1,0 +1,3 @@
+2024-09-16 21:31:46,196 - INFO - Starting benchmark: Tokens: 500 | Requests: 1 | RPM: 20
+2024-09-16 21:31:52,026 - INFO - Request 1 | Endpoint: https://aoai-jp-east.openai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2024-06-01&generated_tokens=500 | Status: 200 | Request Time: 2024-09-16T12:31:46.196562+00:00 | First Token Time: 2024-09-16T12:31:47.625546+00:00 | Done Time: 2024-09-16T12:31:52.026395+00:00 | Time to First Token: 1.429s | Total Time: 5.830s
+2024-09-16 21:31:52,026 - INFO - Successful requests made: 1 | Average Time to First Token: 1.429ss | Average Total Time: 5.830ss | RPM: 20

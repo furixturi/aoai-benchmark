@@ -79,7 +79,7 @@ if use_openai:
 
 # Configure logging
 logging.basicConfig(
-    filename=f"aoai_benchmark_openai_{tokens}tokens.log" if use_openai else f"aoai_benchmark_{tokens}tokens.log",
+    filename=f"aoai_benchmark_openai_{tokens}tokens{"_strean" if use_stream else ""}.log" if use_openai else f"aoai_benchmark_{tokens}tokens{"_stream" if use_stream else ""}.log",
     filemode='w',  # Overwrite the log file each time the script runs
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
@@ -142,48 +142,84 @@ async def make_request(session, i, data):
 
 ## With streaming
 async def make_request_stream(session, i, data):
-    data = {
-        "messages": [
-            {"role": "system", "content": "You are a helpful assistant trained to generate exactly the number of tokens requested. Always generate content with deep detail and explanation to ensure the required token count is reached. Don't output anything else."},
-            {"role": "user", "content": prompt}
-        ],
-        "max_tokens": tokens,
-        "temperature": 0.7,
-        "top_p": 1,
-        "frequency_penalty": 0,
-        "presence_penalty": 0,
-        "stream": True
-    }
-    
     request_time = datetime.now(timezone.utc)
     request_time_str = request_time.isoformat()
     first_token_time = None
     done_time = None
     
-    # try:
-    #     async with session.post(API_ENDPOINT, headers=HEADERS, json=data) as response:
-    #         if response.status == 200:
-    #             while True:
-    #                 line = await response.content.readline()
-    #                 if not line:
-    #                     break
-    #                 decoded_line = line.decode('utf-8').strip()
-    #                 if decoded_line.startswith('data: '):
-    #                     data_str = decoded_line[6:]
-    #                     if data_str == '[DONE]':
-    #                         done_time = datetime.now(timezone.utc)
-    #                         break
-    #                     else:
-    #                         try:
-    #                             data_json = json.loads(data_str)
-    #                             choices = data_json.get("choices", [])
-    #                             if choices:
-    #                                 delta = choices[0].get("delta", {})
-    #                                 content = delta.get("content", "")
-    #                                 if content.strip() != '':
-    #                                     if first_token_time is None:
-    #                                         first_token_time = datetime.now(timezone.utc)
-                                        
+    try:
+        async with session.post(API_ENDPOINT, headers=HEADERS, json=data) as response:
+            if response.status == 200:
+                while True:
+                    line = await response.content.readline()
+                    if not line:
+                        break
+                    decoded_line = line.decode('utf-8').strip()
+                    if decoded_line.startswith('data: '):
+                        data_str = decoded_line[6:]
+                        if data_str == '[DONE]':
+                            done_time = datetime.now(timezone.utc)
+                            break
+                        else:
+                            try:
+                                data_json = json.loads(data_str)
+                                # Two lines will be received before first token, one with empty choices and one with empty choices["delta"]["content"]:
+                                ## {"choices":[],"created":0,"id":"","model":"","object":"","prompt_filter_results":[{"prompt_index":0,"content_filter_results":{"hate":{"filtered":false,"severity":"safe"},"jailbreak":{"filtered":false,"detected":false},"self_harm":{"filtered":false,"severity":"safe"},"sexual":{"filtered":false,"severity":"safe"},"violence":{"filtered":false,"severity":"safe"}}}]}
+                                ## {"choices":[{"content_filter_results":{},"delta":{"content":"","role":"assistant"},"finish_reason":null,"index":0,"logprobs":null}],"created":1726396815,"id":"chatcmpl-A7gxr5My7tpoYHvihqTysGy150dHI","model":"gpt-4","object":"chat.completion.chunk","system_fingerprint":null}
+                                choices = data_json.get("choices", [])
+                                if choices:
+                                    delta = choices[0].get("delta", {})
+                                    content = delta.get("content", "")
+                                    if content.strip() != '':
+                                        if first_token_time is None:
+                                            first_token_time = datetime.now(timezone.utc)
+                            except json.JSONDecodeError as e:
+                                logging.error(f"Reauest {i} | Endpoint: {API_ENDPOINT} | Error decoding JSON: {e}")
+                                print(f"Request {i} | Endpoint: {API_ENDPOINT} | Error decoding JSON: {e}")
+                                # terminate current streaming request 
+                                return (None, None)
+                # After streaming is done, calculate the total time
+                if first_token_time:
+                    first_token_time_str = first_token_time.isoformat()
+                    time_to_first_token = (first_token_time - request_time).total_seconds()
+                else:
+                    time_to_first_token = None
+                    first_token_time_str = None
+                if done_time:
+                    done_time_str = done_time.isoformat()
+                    total_time = (done_time - request_time).total_seconds()
+                else:
+                    total_time = None
+                    done_time_str = None
+                logging.info(
+                    f"Request {i} | Endpoint: {API_ENDPOINT} | Status: {response.status} | Request Time: {request_time_str} | First Token Time: {first_token_time_str} | Done Time: {done_time_str} | Time to First Token: {time_to_first_token:.3f}s | Total Time: {total_time:.3f}s"
+                )
+                print(
+                    f"Request {i} | Endpoint: {API_ENDPOINT} | Status: {response.status} | Request Time: {request_time_str} | First Token Time: {first_token_time_str} | Done Time: {done_time_str} | Time to First Token: {time_to_first_token:.3f}s | Total Time: {total_time:.3f}s"
+                )
+                return (time_to_first_token, total_time)
+            # response status is not 200
+            else:
+                error_text = await response.text()
+                error_time = datetime.now(timezone.utc)
+                error_time_str = error_time.isoformat()
+                logging.error(
+                    f"Request {i} | Endpoint: {API_ENDPOINT} | Status: {response.status} | Request Time: {request_time_str} | Error Time: {error_time_str} | Error: {error_text}"
+                )
+                print(
+                    f"Request {i} | Endpoint: {API_ENDPOINT} | Status: {response.status} | Request Time: {request_time_str} | Error Time: {error_time_str} | Error: {error_text}"
+                )
+                return (None, None)
+    except Exception as e:
+        error_time = datetime.now(timezone.utc)
+        error_time_str = error_time.isoformat()
+        logging.exception(
+            f"Request {i} | Endpoint: {API_ENDPOINT} | Status: Exception | Request Time: {request_time_str} | Exception Time: {error_time_str} | Exception: {e}"
+        )
+        print(
+            f"Request {i} | Endpoint: {API_ENDPOINT} | Status: Exception | Request Time: {request_time_str} | Exception Time: {error_time_str} | Exception: {e}"
+        )
+        return (None, None)                                        
                             
 async def schedule_request(session, request_number, data, delay):
     await asyncio.sleep(delay)
@@ -214,33 +250,29 @@ async def main():
     if use_stream:
         data["stream"] = True
 
+    logging.info(f"Starting benchmark: Tokens: {tokens} | Requests: {total_requests} | RPM: {args.rpm}")
     async with aiohttp.ClientSession() as session:
         durations = await scheduler(session, total_requests, data, delay_between_calls)
         if use_stream:
             # durations is a lit of tuples: (time_to_first_token, total_time)
             time_to_first_token_list = [d[0] for d in durations if d[0] is not None]
             total_time_list = [d[1] for d in durations if d[1] is not None]
-            if time_to_first_token_list:
-                avg_time_to_first_token = sum(time_to_first_token_list) / len(time_to_first_token_list)
-                print(f"Average Time to First Token: {avg_time_to_first_token:.3f}s")
-                logging.info(f"Average Time to First Token: {avg_time_to_first_token:.3f}s")
-            else:
-                print("Average Time to First Token: N/A")
-                logging.info("Average Time to First Token: N/A")
-            if total_time_list:
-                avg_total_time = sum(total_time_list) / len(total_time_list)
-                print(f"Average Total Time: {avg_total_time:.3f}s")
-                logging.info(f"Average Total Time: {avg_total_time:.3f}s")
-            else:
-                print("Average Total Time: N/A")
-                logging.info("Average Total Time: N/A")
+            
+            avg_time_to_first_token = sum(time_to_first_token_list) / len(time_to_first_token_list) if time_to_first_token_list else None
+            avg_time_to_first_token_str = f"{avg_time_to_first_token:.3f}s" if avg_time_to_first_token else "N/A"
+            
+            avg_total_time = sum(total_time_list) / len(total_time_list) if total_time_list else None
+            avg_total_time_str = f"{avg_total_time:.3f}s" if avg_total_time else "N/A"
+            
+            print(f"Successful requests made: {len(total_time_list)} | Average Time to First Token: {avg_time_to_first_token_str}s | Average Total Time: {avg_total_time_str}s | RPM: {args.rpm}")
+            logging.info(f"Successful requests made: {len(total_time_list)} | Average Time to First Token: {avg_time_to_first_token_str}s | Average Total Time: {avg_total_time_str}s | RPM: {args.rpm}")
         else:
             # durations is a list of durations for each request
             success_durations = [d for d in durations if d is not None]
             if success_durations:
                 average_duration = sum(success_durations) / len(success_durations)
                 print(f"Successful requests made: {len(success_durations)} | Average duration: {average_duration:.3f}s | RPM: {args.rpm}")
-                logging.info(f"Average duration: {average_duration:.3f}s - RPM: {args.rpm}")
+                logging.info(f"Successful requests made: {len(success_durations)} | Average duration: {average_duration:.3f}s | RPM: {args.rpm}")
             else:
                 print("No successful requests were made.")
                 logging.info("No successful requests were made.")

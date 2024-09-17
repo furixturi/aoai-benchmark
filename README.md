@@ -3,6 +3,7 @@ A (quick and dirty) script to benchmark GPT-4o chat completion and compare the <
 - Azure OpenAI PTU
 - Azure OpenAI Global Standard PayGo
 - OpenAI API
+
 for generating 500, 1000, 2000, 3000, 4000 tokens, respectively.
 
 ## Supported Parameters and Options
@@ -10,8 +11,8 @@ When running the script you can specify the following parameters
 - `--tokens`: int. Required. How many tokens to generate in each request
 - `--requests`: int. Default to 100. How many requests to execute.
 - `--rpm`: int. Default to 20. How many requests to make per minute. Adjust this according to your TPM rate limit to avoid 429 errors.
-- `--stream`: `true` or `false`, default to false. Whether to use streaming so that you also get stats for TTFT (time to first token). 
-- `--openai`: `true` or `false`, default to false. Whether to use OpenAI endpoint.
+- `--stream`: `true` or `false`. Default to false. Whether to use streaming so that you also get stats for TTFT (time to first token). 
+- `--openai`: `true` or `false`. Default to false. Whether to use OpenAI endpoint.
 
 ## How to use
 - (Optional) Create a Python virtual environment and activate it.
